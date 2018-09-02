@@ -1,0 +1,44 @@
+<html>
+<title>Javascript Event bubbling</title>
+
+<head>
+  <style>
+    div,
+    ul,
+    li {
+      height: 500px;
+    }
+
+    div {
+      background-color: maroon;
+      color: white;
+      ;
+    }
+
+    ul {
+      background-color: orange;
+      color: black;
+    }
+
+    li {
+      background-color: turquoise;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  Javascript Event Bubbling
+  <div onclick="alert('i am a div')">
+    div element. Click me.
+    <ul onclick="alert('I am a ul')">
+      Unordered list. Click me.
+      <li onclick="alert('I am an li')">List Item: Click me. Event Bubbling Mode : When an event happens on a element, it
+        first runs the handler function defined on itself, then on its parent, then all the way upto other ancestors if event
+        handlers for parents exist.
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

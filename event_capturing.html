@@ -1,0 +1,49 @@
+<html>
+<title>Javascript Event Capturing</title>
+
+<head>
+  <style>
+    div,
+    ul,
+    li {
+      height: 500px;
+    }
+
+    div {
+      background-color: maroon;
+      color: white;
+      ;
+    }
+
+    ul {
+      background-color: orange;
+      color: black;
+    }
+
+    li {
+      background-color: turquoise;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  Javascript Event Capturing.
+  <div>
+    div element. Click me. Event Capture mode: When an event happens on a element, it first runs the handler function defined
+    on me(eldest ancestor), then on my child, then on my gran-child and so on.
+    <ul onclick="alert('I am a ul')">
+      Unordered list. Click me.
+      <li onclick="alert('I am an li')">List Item: Click me.
+      </li>
+    </ul>
+  </div>
+</body>
+
+<script>
+  document.getElementsByTagName('div')[0].addEventListener("click", function () { alert("I am a div.") }, true);
+  document.getElementsByTagName('ul')[0].addEventListener("click", function () { alert("I am a ul.") }, true);
+  document.getElementsByTagName('li')[0].addEventListener("click", function () { alert("I am a li.") }, true)
+</script>
+
+</html>
